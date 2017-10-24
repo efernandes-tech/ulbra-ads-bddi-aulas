@@ -27,3 +27,25 @@ SELECT C.PkCodCli AS "Código do Cliente", C.NomeCli AS "Nome do Cliente" FROM T
 SELECT C.NomeCli, C.SalarioCli, (C.SalarioCli + 100) AS Novo FROM TbCliente C;
 
 SELECT C.NomeCli, C.SalarioCli * C.PkCodCli FROM TbCliente C;
+
+SELECT * FROM TbCliente C ORDER BY C.PkCodCli;
+
+SELECT * FROM TbCliente C ORDER BY C.PkCodCli DESC;
+
+SELECT DISTINCT C.SexoCli FROM TbCliente C;
+
+SELECT * FROM TbCliente C WHERE C.PkCodCli = 2;
+
+SELECT * FROM TbCliente C WHERE C.SalarioCli >= 340.27;
+
+SELECT * FROM TbCliente C WHERE C.DataNascCli < '01/01/1995';
+
+SELECT * FROM TbCliente C WHERE C.NomeCli = 'Maria Antonieta';
+
+SELECT * FROM TbCliente C WHERE UPPER(C.NomeCli) = UPPER('MaRiA ANnToNiEtA');
+
+SELECT * FROM TbCliente C WHERE UPPER(C.NomeCli) LIKE UPPER('M%');
+
+SELECT * FROM TbCliente C WHERE UPPER(C.NomeCli) LIKE UPPER('%a');
+
+SELECT * FROM TbCliente C WHERE UPPER(C.NomeCli) LIKE UPPER('%i%');
