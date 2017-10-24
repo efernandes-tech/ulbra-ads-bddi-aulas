@@ -14,4 +14,4 @@ INSERT INTO TbCliente(PkCodCli, NomeCli, EndCli, DataNascCli, SalarioCli, SexoCl
 
 SELECT * FROM TbCliente;
 
-SELECT PkCodCli, NomeCli FROM TbCliente WHERE PkCodCli;
+SELECT PkCodCli, NomeCli FROM TbCliente WHERE PkCodCli > 0;
