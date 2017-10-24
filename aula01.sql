@@ -1,9 +1,11 @@
-create table TbCliente (
-    PkCodCid integer not null,
-    NomeCid varchar(20) not null,
-    UfCid varchar(2) default 'RS'
+CREATE TABLE TbCliente (
+    PkCodCid INTEGER NOT NULL,
+    NomeCid VARCHAR(20) NOT NULL,
+    UfCid VARCHAR(2) DEFAULT 'RS'
 );
 
-alter table TbCliente add Email varchar(60);
-alter table TbCliente rename column Email to EmailCli;
-alter table 
+ALTER TABLE TbCliente ADD Email VARCHAR(60);
+ALTER TABLE TbCliente RENAME COLUMN Email TO EmailCli;
+ALTER TABLE TbCliente MODIFY EmailCli VARCHAR(100);
+ALTER TABLE TbCliente DROP COLUMN EmailCli;
+ALTER TABLE TbCliente ADD CONSTRAINT TbClientePk PRIMARY KEY(PkCodCid);
