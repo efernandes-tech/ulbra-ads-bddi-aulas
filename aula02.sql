@@ -15,3 +15,15 @@ INSERT INTO TbCliente(PkCodCli, NomeCli, EndCli, DataNascCli, SalarioCli, SexoCl
 SELECT * FROM TbCliente;
 
 SELECT PkCodCli, NomeCli FROM TbCliente WHERE PkCodCli > 0;
+
+SELECT TbCliente.PkCodCli, TbCliente.NomeCli FROM TbCliente;
+
+SELECT C.PkCodCli, C.NomeCli FROM TbCliente C;
+
+SELECT C.PkCodCli AS Codigo, C.NomeCli AS Nome FROM TbCliente C;
+
+SELECT C.PkCodCli AS "Código do Cliente", C.NomeCli AS "Nome do Cliente" FROM TbCliente C;
+
+SELECT C.NomeCli, C.SalarioCli, (C.SalarioCli + 100) AS Novo FROM TbCliente C;
+
+SELECT C.NomeCli, C.SalarioCli * C.PkCodCli FROM TbCliente C;
