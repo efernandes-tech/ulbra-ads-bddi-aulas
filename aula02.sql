@@ -7,3 +7,5 @@ create table TbCliente (
     SexoCli varchar(1)
 );
 
+alter table TbCliente add constraint TbClientePk primary key(PkCodCli);
+
