@@ -49,3 +49,16 @@ SELECT * FROM TbCliente C WHERE UPPER(C.NomeCli) LIKE UPPER('M%');
 SELECT * FROM TbCliente C WHERE UPPER(C.NomeCli) LIKE UPPER('%a');
 
 SELECT * FROM TbCliente C WHERE UPPER(C.NomeCli) LIKE UPPER('%i%');
+
+SELECT * FROM TbCliente C WHERE UPPER(C.SexoCli)='M' AND C.SalarioCli > 1000;
+
+SELECT * FROM TbCliente C WHERE C.PkCodCli = 2 OR C.PkCodCli = 4;
+
+SELECT * FROM TbCliente C WHERE C.PkCodCli IN(2,4,5,7);
+
+/* Funções de agregação. */
+SELECT SUM(C.SalarioCli) FROM TbCliente C; /* Soma salários. */
+SELECT COUNT(*) FROM TbCliente C; /* Qtd de registros. */
+SELECT AVG(C.SalarioCli) FROM TbCliente C; /* Média salarial. */
+SELECT MAX(C.SalarioCli) FROM TbCliente C; /* Maior salário. */
+SELECT MIN(C.SalarioCli) FROM TbCliente C; /* Menor salário. */
