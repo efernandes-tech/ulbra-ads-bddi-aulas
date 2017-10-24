@@ -56,9 +56,18 @@ SELECT * FROM TbCliente C WHERE C.PkCodCli = 2 OR C.PkCodCli = 4;
 
 SELECT * FROM TbCliente C WHERE C.PkCodCli IN(2,4,5,7);
 
-/* Funções de agregação. */
+/* Funções de agregação INICIO */
 SELECT SUM(C.SalarioCli) FROM TbCliente C; /* Soma salários. */
 SELECT COUNT(*) FROM TbCliente C; /* Qtd de registros. */
 SELECT AVG(C.SalarioCli) FROM TbCliente C; /* Média salarial. */
 SELECT MAX(C.SalarioCli) FROM TbCliente C; /* Maior salário. */
 SELECT MIN(C.SalarioCli) FROM TbCliente C; /* Menor salário. */
+/* Funções de agregação FIM */
+
+SELECT C.SexoCli, COUNT(*) FROM TbCliente C GROUP BY C.SexoCli;
+
+SELECT C.SexoCli, COUNT(*) FROM TbCliente C HAVING COUNT(*) > 2  GROUP BY C.SexoCli
+
+SELECT * FROM TbCliente C WHERE C.PkCodCli IN(
+    SELECT MAX(X.PkCodCli) FROM TbCliente X
+);
