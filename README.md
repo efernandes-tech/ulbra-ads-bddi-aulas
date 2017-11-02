@@ -1,2 +1,6 @@
 # ulbra-ads-bddi-aulas
-Exemplos e exercícios da disciplina de banco de dados I do curso de análise e desenvolvimento de sistemas na ulbra canoas-rs 2017/2.
+
+- Exemplos e exercícios;
+- Disciplina de Banco de Dados I;
+- Curso de Análise e Desenvolvimento de Sistemas;
+- ULBRA Canoas-RS 2017/2;
