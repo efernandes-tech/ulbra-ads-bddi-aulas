@@ -1,13 +1,13 @@
-select * from tbprodutos p, tbcategoria c
-where p.fkcodcat = c.pkcodcat
+SELECT * FROM TbProdutos p, TbCategoria c
+WHERE p.FkCodCat = c.PkCodCat
 
-select * from tbproduto p
-inner join tbcategoria c on c.pkcodcat = p.fkcodcat
-inner join tbfornecedor f on f.pkcodforn = p.fkcodforn
+SELECT * FROM TbProduto p
+INNER JOIN TbCategoria c ON c.PkCodCat = p.FkCodCat
+INNER JOIN TbFornecedor f ON f.PkCodForn = p.FkCodForn
 
-select c.nomecat from tbcategoria c
-inner join tbproduto p on p.pkcodprod = c.pkcodcat
-inner join tbfornecedor f on f.pkcodforn = p.fkcodforn
+SELECT c.NomeCat FROM TbCategoria c
+INNER JOIN TbProduto p ON p.PkCodProd = c.PkCodCat
+INNER JOIN TbFornecedor f ON f.PkCodForn = p.fkcodforn
 where upper(f.nomeforn) like upper('%x%')
 
 select * from tbproduto p
