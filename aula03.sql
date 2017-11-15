@@ -7,32 +7,32 @@ INNER JOIN TbFornecedor f ON f.PkCodForn = p.FkCodForn
 
 SELECT c.NomeCat FROM TbCategoria c
 INNER JOIN TbProduto p ON p.PkCodProd = c.PkCodCat
-INNER JOIN TbFornecedor f ON f.PkCodForn = p.fkcodforn
-where upper(f.nomeforn) like upper('%x%')
+INNER JOIN TbFornecedor f ON f.PkCodForn = p.FkCodForn
+WHERE UPPER(f.NomeForn) LIKE UPPER('%x%')
 
-select * from tbproduto p
-inner join tbfornecedor f on f.pkcodforn = p.fkcodforn
-left join tbfornecedor f on f.pkcodforn = p.fkcodforn
-right join tbfornecedor f on f.pkcodforn = p.fkcodforn
-full join tbfornecedor f on f.pkcodforn = p.fkcodforn
+SELECT * FROM TbProduto p
+INNER JOIN TbFornecedor f ON f.PkCodForn = p.FkCodForn
+LEFT JOIN TbFornecedor f ON f.PkCodForn = p.FkCodForn
+RIGHT JOIN TbFornecedor f ON f.PkCodForn = p.FkCodForn
+FULL JOIN TbFornecedor f ON f.PkCodForn = p.FkCodForn
 
-select count(*) fron tbfornecedor
+SELECT COUNT(*) FROM TbFornecedor
 
-select estadoforn, count(*) from tbfornecedor group by estadoforn
+SELECT EstadoForn, COUNT(*) FROM TbFornecedor GROUP BY EstadoForn
 
-select estadoforn, count(*) from tbfornecedor
-having count(*)>= 2 group by estadoforn
+SELECT EstadoForn, COUNT(*) FROM TbFornecedor
+HAVING COUNT(*) >= 2 GROUP BY EstadoForn
 
-update tbproduto p set
-    p.nomeprod = 'Garfo',
-    p.estoqueprod = 5
-where p.pkcodprod = 104
+UPDATE TbProduto p SET
+    p.NomeProd = 'Garfo',
+    p.EstoqueProd = 5
+WHERE p.PkCodProd = 104
 
-delete from tbproduto where pkcodprod = 104
+DELETE FROM TbProduto WHERE PkCodProd = 104
 
-select * from tbproduto p where p.pkcodprod in (108,110,113)
+SELECT * FROM TbProduto p WHERE p.PkCodProd IN (108, 110, 113)
 
-delete from tbproduto p
-where p.pkcodforn in (select pkcodforn from tbfornecedor f where f.pkcodforn > 10)
+DELETE FROM TbProduto p
+WHERE p.PkCodForn IN (SELECT PkCodForn FROM TbFornecedor f WHERE f.PkCodForn > 10)
 
-select * from tbcategoria c where c.pkcodcat in (select max(x.pkcodcat) from tbcategoria x)
+SELECT * FROM TbCategoria c WHERE c.PkCodCat IN (SELECT MAX(x.PkCodCat) FROM TbCategoria x)
